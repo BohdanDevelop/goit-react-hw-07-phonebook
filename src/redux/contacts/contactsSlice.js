@@ -29,13 +29,11 @@ const contactsSlice = createSlice({
       loading: true,
     }),
     [functions.addNumber.fulfilled]: (store, { payload }) => {
-      if (payload) {
-        return {
-          ...store,
-          loading: false,
-          items: [...store.items, payload],
-        };
-      }
+      return {
+        ...store,
+        loading: false,
+        items: [...store.items, payload],
+      };
     },
     [functions.addNumber.rejected]: (store, { payload }) => ({
       ...store,
